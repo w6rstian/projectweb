@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Strona</title>
+    <script>
+        var stateNav = false;
+        function toggleNav() {
+            if (stateNav == false) {
+                document.getElementById("sidenav2").style.width = "250px";              
+                document.getElementById("main").style.marginLeft = "250px";
+                stateNav = 1;
+            } else {
+                document.getElementById("sidenav2").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                stateNav = 0;
+            }
+        }
+        function iconChange(element) {
+            element.classList.toggle("change");
+        }
+        function callTwo(element) {
+            iconChange(element);
+            toggleNav();
+        }
+    </script>
+</head>
+<body>
+<div id="bigWrapper">
+    <nav>
+        <div class="icon" onclick="callTwo(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div id="navbar">
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="about.html">O nas</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="hr yellow"></div>
+    </nav>
+    <div id="shapes2">
+        <div class="spinny2"></div>
+        <div class="circle2"></div>
+        <div class="dashedCircle2"></div>
+    </div>
+    <aside>
+        <div id="sidenav2" class="sidenav2">
+            <a href="html.html" class="list">HTML</a>
+            <div class="chapters">
+                <a href="html.html#template">Szablon strony</a>
+                <a href="html.html#imgs">Zdjęcia</a>
+                <a href="html.html#links">Klikalne linki</a>
+                <a href="html.html#semantics">Znaczniki semantyczne</a>
+                <a href="html.html#tables">Tabele</a>
+                <a href="html.html#lists">Listy</a>
+                <a href="html.html#iframes">Iframe</a>
+                <a href="html.html#maps">Mapy obrazów</a>
+            </div>
+
+            <a href="css.html" class="list">CSS</a>
+            <div class="chapters">
+                <a href="css.html#insert">Dołączanie arkusza</a>
+                <a href="css.html#syntax">Składnia</a>
+                <a href="css.html#colors">Kolory</a>
+                <a href="css.html#backgrounds">Tła</a>
+                <a href="css.html#borders">Obramowania</a>
+                <a href="css.html#margins">Marginesy</a>
+                <a href="css.html#texts">Tekst</a>
+                <a href="css.html#displays">Tryby wyświetlania</a>
+            </div>
+        </div>
+     </aside>
+    <div id="main">
+        <div id="about" class="container">
+            <div class="messageContainer">
+                <div class="headline wrapper">
+                    <h1>Skontaktuj się!</h1>
+                </div>
+                <div class="content wrapper" id="contact">
+                    <div class="mail"><a href="mailto:youremail@yoursite.com">
+                        <p>&#9993;</p> 
+                        <p>Napisz do nas!</p>
+                    </a></div>
+                    <div class="call"><a href="tel:+12345678900">
+                        <p>&#9742;</p>
+                        <p>Zadzwoń!</p>
+                    </a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="footer2">
+    <div class="hr yellow"></div>
+    <h3>•••</h3>
+</footer>
+</body>
+</html>

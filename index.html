@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Strona</title>
+    <script>
+        var stateNav = false;
+        function toggleNav() {
+            if (stateNav == false) {
+                document.getElementById("sidenav").style.width = "250px";
+                document.getElementById("sidenav").style.marginTop = "-50px";
+                document.getElementById("main").style.marginLeft = "250px";
+                stateNav = 1;
+            } else {
+                document.getElementById("sidenav").style.width = "0";
+                document.getElementById("sidenav").style.marginTop = "-50px";
+                document.getElementById("main").style.marginLeft = "0";
+                document.getElementById("info").style.marginTop = "0";
+                stateNav = 0;
+            }
+        }
+        function iconChange(element) {
+            element.classList.toggle("change");
+        }
+        function callTwo(element) {
+            iconChange(element);
+            toggleNav();
+        }
+    </script>
+</head>
+<body>
+<div id="bigWrapper">
+    <header id="header-video">
+        <video id="video" autoplay loop muted>
+                <source src="assets/video/video.mp4" type="video/mp4">
+        </video>
+        <div id="header-text">
+            <h1>Witaj w Projekcie Web!</h1>
+        </div>
+    </header>
+    <nav>
+        <div class="icon" onclick="callTwo(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div id="navbar">
+            <ul>
+                <li><a href="#">Strona główna</a></li>
+                <li><a href="about.html">O nas</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="hr yellow"></div>
+    </nav>
+    <div id="shapes">
+        <div class="spinny"></div>
+        <div class="circle"></div>
+        <div class="dashedCircle"></div>
+    </div>
+    <aside>
+            <div id="sidenav" class="sidenav">
+                <a href="html.html" class="list">HTML</a>
+                <div class="chapters">
+                    <a href="html.html#template">Szablon strony</a>
+                    <a href="html.html#imgs">Zdjęcia</a>
+                    <a href="html.html#links">Klikalne linki</a>
+                    <a href="html.html#semantics">Znaczniki semantyczne</a>
+                    <a href="html.html#tables">Tabele</a>
+                    <a href="html.html#lists">Listy</a>
+                    <a href="html.html#iframes">Iframe</a>
+                    <a href="html.html#maps">Mapy obrazów</a>
+                </div>
+
+                <a href="css.html" class="list">CSS</a>
+                <div class="chapters">
+                    <a href="css.html#insert">Dołączanie arkusza</a>
+                    <a href="css.html#syntax">Składnia</a>
+                    <a href="css.html#colors">Kolory</a>
+                    <a href="css.html#backgrounds">Tła</a>
+                    <a href="css.html#borders">Obramowania</a>
+                    <a href="css.html#margins">Marginesy</a>
+                    <a href="css.html#texts">Tekst</a>
+                    <a href="css.html#displays">Tryby wyświetlania</a>
+                </div>
+            </div>
+    </aside>
+    <div id="main">
+        
+        <div id="info" class="container">
+            <div class="messageContainer">
+                <div class="headline wrapper">
+                    <h1>"Czym ja jestem?"</h1>
+                </div>
+                <div class="content wrapper"><p>Niniejsza strona jest poświęcona podstawom HTML i CSS.
+
+                Jest ona również swego rodzaju zeszytem. Umieściłem na niej zagadnienia, których uczyliśmy się na lekcjach tworzenia stron internetowych. Posłużyła mi jako ćwiczenie i utrwalenie poznanych wiadomości.</p></div>
+            </div>
+            <div class="messageContainer">
+                <div class="headline wrapper">
+                    <h1>Czego się tu nauczę?</h1>
+                </div>
+                <div class="content wrapper">Nauczysz się tutaj podstaw HTML i CSS. Nie znajdziesz tutaj wszystkiego, od tego są inne strony. 
+                    <div class="wink"><a target="_blank" href="https://www.w3schools.com/"><span>ekhm... w3schools ekhm...</span></a></div>
+
+                <p>Nauczysz się jednak m.in. jak wygląda szablon strony, jak dołączyć zewnętrzny arkusz CSS czy jak stosować podstawowe znaczniki HTML.</p></div>
+            </div> 
+        </div>
+        <div class="form container">
+            <div class="glow">
+                <div class="formHeadline wrapper">
+                    <h1>Chcesz otrzymywać porady odnośnie HTML i CSS?</h1>
+                </div>
+                <div class="formContent wrapper">
+                    <p>Zapisz się do newslettera, a my pomożemy Ci się rozwinąć!</p>
+                    <form action="form.php" method="post">
+                        <input type="text" placeholder="Wpisz swoje imię" name="name" id="name" autocomplete="off" required>
+                        <input type="email" placeholder="Wpisz swój adres e-mail" name="email" id="email" required>
+                        <input type="submit" name="submit" id="submit" value="Zapisz się">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="hr yellow"></div>
+    <h3>•••</h3>
+</footer>
+</body>
+</html>

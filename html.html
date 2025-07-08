@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Strona</title>
+    <script>
+        var stateNav = false;
+        function toggleNav() {
+            if (stateNav == false) {
+                document.getElementById("sidenav2").style.width = "250px";              
+                document.getElementById("main").style.marginLeft = "250px";
+                stateNav = 1;
+            } else {
+                document.getElementById("sidenav2").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                stateNav = 0;
+            }
+        }
+        function iconChange(element) {
+            element.classList.toggle("change");
+        }
+        function callTwo(element) {
+            iconChange(element);
+            toggleNav();
+        }
+    </script>
+</head>
+<body>
+<div id="bigWrapper">
+    <nav>
+        <div class="icon" onclick="callTwo(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div id="navbar">
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="about.html">O nas</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="hr yellow"></div>
+    </nav>
+    <div id="shapes2">
+        <div class="spinny2"></div>
+        <div class="circle2"></div>
+        <div class="dashedCircle2"></div>
+    </div>
+    <aside>
+        <div id="sidenav2" class="sidenav2">
+            <a href="#" class="list">HTML</a>
+            <div class="chapters">
+                <a href="#template">Szablon strony</a>
+                <a href="#imgs">Zdjęcia</a>
+                <a href="#links">Klikalne linki</a>
+                <a href="#semantics">Znaczniki semantyczne</a>
+                <a href="#tables">Tabele</a>
+                <a href="#lists">Listy</a>
+                <a href="#iframes">Iframe</a>
+                <a href="#maps">Mapy obrazów</a>
+            </div>
+
+            <a href="css.html" class="list">CSS</a>
+            <div class="chapters">
+                <a href="css.html#insert">Dołączanie arkusza</a>
+                <a href="css.html#syntax">Składnia</a>
+                <a href="css.html#colors">Kolory</a>
+                <a href="css.html#backgrounds">Tła</a>
+                <a href="css.html#borders">Obramowania</a>
+                <a href="css.html#margins">Marginesy</a>
+                <a href="css.html#texts">Tekst</a>
+                <a href="css.html#displays">Tryby wyświetlania</a>
+            </div>
+        </div>
+     </aside>
+    <div id="main">
+        <div id="html" class="container">
+            <div class="messageContainer">
+                <div class="headline wrapper">
+                    <h1>HTML</h1>
+                </div>
+                <div class="content wrapper bigger">
+                    <p>Dowiesz się tutaj jak wykonać podstawowe czynności w HTML.
+
+
+                        W języku HTML wykorzystuje się tzw. znaczniki. Zapisuje się je w ten sposób: &lt;tag&gt;
+
+                        Wszystkie znaczniki trzeba zamknąć: &lt;/&gt;
+
+                        Strony zapisuje się w pliku z rozszerzeniem .html
+                        </p>
+                </div>
+            </div>
+            <div id="template" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Szablon strony</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>Każda strona powinna zawierać ten szablon.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+&lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;pl-PL&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    
+    &lt;/body&gt;
+    &lt;/html&gt;</p>
+                    </div>
+                </div>
+            </div>
+            <div id="imgs" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Zdjęcia</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>Atrybut alt nie jest wymagany, ale powinno się go stosować. Służy on do wyświetlania tekstu w miejsce obrazka, gdy ten nie zostanie załadowany.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+&lt;img src=&quot;zdjecie.png&quot; alt=&quot;zdjecie&quot;&gt;</p>
+                    </div>
+                    <div class="codeExec">
+                        <img src="zdjecie.png" alt="zdjecie">
+                    </div>
+                </div>
+            </div>
+            <div id="links" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Klikalne linki</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>Opcjonalny atrybut target z wartością _blank powoduje otworzenie linku w nowej karcie.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+&lt;a href=&quot;url&quot; target=&quot;_blank&quot;&gt;link tekst&lt;/a&gt;</p>
+                    </div>
+                    <div class="codeExec">
+                        <a href="https://www.duckduckgo.com" target="_blank" style="color: white;">Link tekst</a>
+                    </div>
+                </div>
+            </div>
+            <div id="semantics" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Znaczniki semantyczne</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>Same w sobie nic nie robią. Można je jednak formatować za pomocą CSS, aby nadać wygląd poszczególnym elementom.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+&lt;header&gt; - Definiuje nagłówek strony lub sekcji.
+&lt;nav&gt; - Definiuje zestaw linków nawigacyjnych.
+&lt;div&gt; - Jest uniwersalnym kontenerem, który można dowolnie kształtować.
+&lt;section&gt; - Nie jest zwykłym kontenerem. Powinno się go stosować, tylko gdy będzie zawierał zawartość dla użytkownika.
+&lt;article&gt; - Definiuje samodzielną tematyczną część tekstu. Może zawierać różne sekcje.
+&lt;aside&gt; - Definiuje zawartość obok reszty zawartości strony (np. wąski pasek z boku).
+&lt;footer&gt; - Definiuje stopkę strony lub sekcji.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="tables" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Tabele</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>&lt;tr&gt; tworzy wiersze, a &lt;th&gt; wytłuszczone nagłówki.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Nagłówek&lt;/th&gt;
+        &lt;th&gt;Nagłowek&lt;/th&gt;
+        &lt;th&gt;Nagłowek&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Dane&lt;/td&gt;
+        &lt;td&gt;Dane&lt;/td&gt;
+        &lt;td&gt;Dane&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Dane&lt;/td&gt;
+        &lt;td&gt;Dane&lt;/td&gt;
+        &lt;td&gt;Dane&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</p>
+                    </div>
+                    <div class="codeExec">
+                        <table style="margin: auto;">
+                            <tr>
+                                <th>Nagłówek</th>
+                                <th >Nagłówek</th>
+                                <th>Nagłówek</th>
+                            </tr>
+                            <tr>
+                                <td>Dane</td>
+                                <td>Dane</td>
+                                <td>Dane</td>
+                            </tr>
+                            <tr>
+                                <td>Dane</td>
+                                <td>Dane</td>
+                                <td>Dane</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="lists" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Listy</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="codeEmbed"><p>
+&lt;ul&gt;  &lt;!-- Lista punktowana --&gt;
+    &lt;li&gt;Kawa&lt;/li&gt;
+    &lt;li&gt;Herbata&lt;/li&gt;
+    &lt;li&gt;Mleko&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;  &lt;!-- Lista numerowana --&gt;
+    &lt;li&gt;Kawa&lt;/li&gt;
+    &lt;li&gt;Herbata&lt;/li&gt;
+    &lt;li&gt;Mleko&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;dl&gt;  &lt;!-- Lista definicji --&gt;
+  &lt;dt&gt;Kawa&lt;/dt&gt;
+  &lt;dd&gt;- ciemny gorący napój&lt;/dd&gt;
+  &lt;dt&gt;Milk&lt;/dt&gt;
+  &lt;dd&gt;- biały zimny napój&lt;/dd&gt;
+&lt;/dl&gt;</p>
+                    </div>
+                    <div class="codeExec">
+                        <ul>
+                            <li>Kawa</li>
+                            <li>Herbata</li>
+                            <li>Mleko</li>
+                        </ul>
+                        <ol>
+                            <li>Kawa</li>
+                            <li>Herbata</li>
+                            <li>Mleko</li>
+                        </ol>
+                        <dl>
+                            <dt>Kawa</dt>
+                            <dd>- ciemny gorący napój</dd>
+                            <dt>Mleko</dt>
+                            <dd>- biały zimny napój</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div id="iframes" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Iframe - ramka inline</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>Używana do załączania innych dokumentów na stronie.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+&lt;iframe src=&quot;url&quot; title=&quot;opis&quot;&gt;</p>
+                    </div>
+                </div>
+            </div>
+            <div id="maps" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Mapy obrazów</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>Mapy obrazów służa do tworzenia klikalnych obszarów na obrazie.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+&lt;img src=&quot;workplace.jpg&quot; alt=&quot;Stanowisko pracy&quot; usemap=&quot;#workmap&quot;&gt;
+
+&lt;map name=&quot;workmap&quot;&gt;
+&lt;area shape=&quot;rect&quot; coords=&quot;34,44,270,350&quot; alt=&quot;Komputer&quot; href=&quot;computer.htm&quot;&gt;
+&lt;area shape=&quot;rect&quot; coords=&quot;290,172,333,250&quot; alt=&quot;Telefon&quot; href=&quot;phone.htm&quot;&gt;
+&lt;area shape=&quot;circle&quot; coords=&quot;337,300,44&quot; alt=&quot;Kawa&quot; href=&quot;coffee.htm&quot;&gt;
+&lt;/map&gt;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="footer2">
+    <div class="hr yellow"></div>
+    <h3>•••</h3>
+</footer>
+</body>
+</html>

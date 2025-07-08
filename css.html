@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Strona</title>
+    <script>
+        var stateNav = false;
+        function toggleNav() {
+            if (stateNav == false) {
+                document.getElementById("sidenav2").style.width = "250px";              
+                document.getElementById("main").style.marginLeft = "250px";
+                stateNav = 1;
+            } else {
+                document.getElementById("sidenav2").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                stateNav = 0;
+            }
+        }
+        function iconChange(element) {
+            element.classList.toggle("change");
+        }
+        function callTwo(element) {
+            iconChange(element);
+            toggleNav();
+        }
+    </script>
+</head>
+<body>
+<div id="bigWrapper">
+    <nav>
+        <div class="icon" onclick="callTwo(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div id="navbar">
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="about.html">O nas</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="hr yellow"></div>
+    </nav>
+    <div id="shapes2">
+        <div class="spinny2"></div>
+        <div class="circle2"></div>
+        <div class="dashedCircle2"></div>
+    </div>
+    <aside>
+        <div id="sidenav2" class="sidenav2">
+            <a href="html.html" class="list">HTML</a>
+            <div class="chapters">
+                <a href="html.html#template">Szablon strony</a>
+                <a href="html.html#imgs">Zdjęcia</a>
+                <a href="html.html#links">Klikalne linki</a>
+                <a href="html.html#semantics">Znaczniki semantyczne</a>
+                <a href="html.html#tables">Tabele</a>
+                <a href="html.html#lists">Listy</a>
+                <a href="html.html#iframes">Iframe</a>
+                <a href="html.html#maps">Mapy obrazów</a>
+            </div>
+
+            <a href="#" class="list">CSS</a>
+            <div class="chapters">
+                <a href="#insert">Dołączanie arkusza</a>
+                <a href="#syntax">Składnia</a>
+                <a href="#colors">Kolory</a>
+                <a href="#backgrounds">Tła</a>
+                <a href="#borders">Obramowania</a>
+                <a href="#margins">Marginesy</a>
+                <a href="#texts">Tekst</a>
+                <a href="#displays">Tryby wyświetlania</a>
+            </div>
+        </div>
+     </aside>
+    <div id="main">
+        <div id="css" class="container">
+            <div class="messageContainer">
+                <div class="headline wrapper">
+                    <h1>CSS</h1>
+                </div>
+                <div class="content wrapper bigger">
+                    <p>Dowiesz się tutaj jak wykonać podstawowe czynności w CSS.
+
+
+                        Język CSS odwołuje się do znaczników HTML i pozwala nadać im określone atrybuty.
+                        CSS jest bardziej zaawansowany pod tym względem od HTML, dlatego stosuje się go do wykonywania szaty graficznej stron.
+
+                        Arkusze CSS zapisuje się w pliku z rozszerzeniem .css, wewnętrznie lub liniowo.
+                        </p>
+                </div>
+            </div>
+            <div id="insert" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Dołączanie arkusza</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>Kod CSS można dołączyć na 3 sposoby. Im bliżej elementu definiowany jest atrybut, tym wyższy ma priorytet.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+&lt;head&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;    &lt;!-- Zewnętrzny arkusz stylów --&gt;
+&lt;style&gt;
+    /* Wewnętrzny arkusz stylów */
+    ...
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div style=&quot;...&quot;&gt;   &lt;!-- Liniowy arkusz stylów --&gt;
+&lt;/div
+&lt;/body&gt;</p>
+                    </div>
+                </div>
+            </div>
+            <div id="syntax" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Składnia</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>CSS odnosi się do danego znacznika, identyfikatora lub klasy i nadaje mu atrybuty oraz ich wartości.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+&lt;style&gt;
+    div {   background-color: tomato;  }
+    p {
+    font-size: 12pt;
+    color: white;
+    }
+&lt;/style&gt;</p>
+                    </div>
+                    <div class="codeExec">
+                        <div style="background-color: tomato;">
+                            <p style="font-size: 12pt; color: white;">Paragraf</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="colors" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Kolory</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>Kolory w CSS są definiowane przez ich nazwy (red, orange, DodgerBlue), system RGB, system HEX lub system HSL.
+                        Wszystkie poniższe wartości wyznaczają ten sam kolor pomidorowy.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+div { 
+    background-color: rgb(255, 99, 71);
+}
+h1 {
+    color: #FF6347;
+}
+p {
+    color: hsl(9, 100%, 64%);
+}
+section {
+    border-color: tomato;
+}</p>
+                    </div>
+                    <div class="codeExec">
+                        <div style="background-color: rgb(255, 99, 71);">Div</div>
+                        <h1 style="color: #FF6347;">Nagłówek</h1>
+                        <p style="color: hsl(9, 100%, 64%);">Paragraf</p>
+                        <section style="border: 1px solid tomato;"><h4 style="font-weight: normal;">Sekcja</h4></section>
+                    </div>
+                </div>
+            </div>
+            <div id="backgrounds" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Tła</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>W CSS każdy element może mieć swoje tło. Istnieje też skrótowy sposób zapisu, nie trzeba wtedy wymieniać każdego atrybutu po kolei.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+body {
+    background-color: #ffffff;
+    background-image: url(&quot;img.png&quot;);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background: #ffffff url(&quot;img_tree.png&quot;) no-repeat right top;
+}</p>
+                    </div>
+                </div>
+            </div>
+            <div id="borders" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Obramowania</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>Istnieją 2 typy obramowań.
+                        Border zajmuje miejsce i jest uwzględniany do szerokości obiektu. 
+                        Outline jest rysowany na zewnątrz border i nie zmienia szerokości obiektu.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+p {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+}
+div {
+    outline: 2px dashed #3300AA;
+}
+/* Jest możliwe też definiowanie każdej strony obramowania oddzielnie */
+section {
+    border-top: 1px dotted #FF6B6B;
+    border-left: 2px solid #FFE66D;
+}</p>
+                    </div>
+                    <div class="codeExec">
+                        <div style="outline: 2px dashed #3300AA;">Div</div>
+                        <section style="border-top: 3px dotted #FF6B6B; border-left: 2px solid #FFE66D;">
+                            <h4 style="font-weight: normal;">Sekcja</h4>
+                            <p style="border-width: 1px; border-style: solid; border-color: black;">Paragraf</p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div id="margins" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Marginesy</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>Margin definiuje margines zewnętrzny, a padding wewnętrzny.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+div {
+    margin: 0 auto; /* Pierwsza wartość ustala margines górny i dolny, druga lewy i prawy. */
+}
+a {
+    padding: 20px 0 10px; /* Górny, lewy i prawy, dolny */
+    margin: 10px 5px 0 auto; /* Górny, prawy, dolny, lewy */
+    color: lightblue;
+}</p>
+                    </div>
+                    <div class="codeExec">
+                        <div style="margin: 0 auto; border: 2px solid white;">
+                            <a href="#" style="padding: 20px 0 10px; margin: 10px 5px 0 auto; color: lightblue; display: block;">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="texts" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Tekst</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>Tekst można wyśrodkować za pomocą CSS.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+p {
+    color: white; /* Kolor czcionki */
+    text-align: center; /* Centrowanie */
+    text-decoration: underline; /* Podkreślenie */
+}
+a {
+    text-decoration: none; /* Usunięcie podkreślenia obecnego domyślnie przy linkach */
+    color: #FFE66D;
+}</p>
+                    </div>
+                    <div class="codeExec">
+                        <p style="color: white; text-align: center; text-decoration: underline;">Paragraf</p>
+                        <a href="#" style="text-decoration: none; color: #FFE66D;">Link</a>
+                    </div>
+                </div>
+            </div>
+            <div id="displays" class="codeContainer">
+                <div class="headline wrapper">
+                    <h1>Tryby wyświetlania</h1>
+                </div>
+                <div class="goodContent wrapper">
+                    <div class="description">
+                        <p>Element blokowy zawsze rozpoczyna się od nowej linii i zajmuje całą dostępną szerokość.
+                        Element inline nie rozpoczyna się od nowej linii i zajmuje tylko tyle miejsca ile potrzeba.</p>
+                    </div>
+                    <div class="codeEmbed"><p>
+div:first-of-type { /* Pseudoklasa :first-of-type wybiera pierwszy element danego typu */
+    display: block;
+}
+div:nth-of-type(2) {
+    display: none;      /* Nie wyświetla się i nie zajmuje miejsca*/
+}
+div:last-of-type {
+    display: inline;
+}</p>
+                    </div>
+                    <div class="codeExec">
+                        <div>Div 1</div>
+                        <div>Div 2</div>
+                        <div>Div 3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer id="footer2">
+    <div class="hr yellow"></div>
+    <h3>•••</h3>
+</footer>
+</body>
+</html>
